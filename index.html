@@ -3,186 +3,217 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vinay Prasad Nainar – Senior ML & MLOps Engineer</title>
+<title>Vinay Prasad Nainar – ML & MLOps Engineer</title>
+
 <style>
     body {
-        font-family: Arial, sans-serif;
         margin: 0;
-        background: #f5f7fa;
-        color: #333;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #0b0f1a, #1b2640, #2a0f45);
+        color: #e6e6e6;
         line-height: 1.6;
+        overflow-x: hidden;
     }
 
-    header {
-        background: #0a2540;
-        color: #fff;
-        padding: 40px 20px;
+    /* Hero Section */
+    .hero {
         text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(40, 20, 80, 0.3));
     }
 
-    header h1 {
-        margin: 0;
-        font-size: 32px;
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid #7f5bff;
+        box-shadow: 0px 0px 25px rgba(140, 82, 255, 0.7);
+        object-fit: cover;
+        margin-bottom: 20px;
     }
 
-    header p {
+    .hero h1 {
+        font-size: 36px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #a074ff, #6bd5ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 10px 0;
+    }
+
+    .hero p {
         font-size: 18px;
-        margin-top: 10px;
+        opacity: 0.9;
     }
 
+    /* Section Containers */
     section {
-        max-width: 900px;
-        margin: auto;
-        padding: 30px 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
     }
 
     h2 {
-        color: #0a2540;
-        border-left: 5px solid #0a2540;
-        padding-left: 10px;
-        margin-top: 40px;
+        font-size: 26px;
+        border-left: 6px solid #a074ff;
+        padding-left: 12px;
+        margin-bottom: 20px;
     }
 
+    /* Glassmorphism Card */
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    /* Skills Grid */
     .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 10px;
-        margin-top: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
     }
 
     .skill-box {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.12);
         padding: 12px;
-        border-radius: 6px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-
-    .project {
-        background: #fff;
-        padding: 20px;
-        margin-top: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    footer {
-        background: #0a2540;
-        color: #fff;
         text-align: center;
-        padding: 20px;
-        margin-top: 40px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #d8d8d8;
+        border: 1px solid rgba(255,255,255,0.15);
     }
 
+    /* Contact */
     .contact a {
-        color: #0a2540;
+        color: #86c7ff;
         font-weight: bold;
         text-decoration: none;
     }
 
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        background: rgba(0,0,0,0.2);
+        color: #aaa;
+    }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Vinay Prasad Nainar</h1>
-    <p>Senior Machine Learning & MLOps Engineer | LLMs | Generative AI | Cloud | NLP</p>
-</header>
+<!-- HERO SECTION -->
+<div class="hero">
+    <img src="Vinay-ProfilePic.jpg" alt="Vinay Prasad Nainar" class="profile-pic">
 
+    <h1>Vinay Prasad Nainar</h1>
+    <p>Senior Machine Learning & MLOps Engineer • LLMs • Generative AI • NLP • Cloud</p>
+</div>
+
+<!-- ABOUT -->
 <section>
     <h2>About Me</h2>
-    <p>
-        I am a Senior Machine Learning Engineer with over <strong>8 years of experience</strong>, including 
-        <strong>3+ years specializing in Large Language Models (LLMs), NLP, Generative AI, and AI-powered automation</strong>. 
-        I design and deploy scalable ML pipelines, enterprise LLM systems, microservices, and cloud-native data platforms.
-        My work focuses on transforming unstructured data into contextual, actionable intelligence.
-    </p>
+    <div class="card">
+        I am a Senior Machine Learning Engineer with <strong>8+ years of experience</strong>, including 
+        <strong>3+ years specializing in LLMs, NLP, and Generative AI</strong>. I design enterprise-ready AI systems, 
+        build scalable ML/MLOps pipelines, and integrate cloud-native architectures that transform 
+        unstructured data into actionable insights.
+    </div>
 </section>
 
+<!-- SKILLS -->
 <section>
     <h2>Technical Skills</h2>
-
     <div class="skills-grid">
+
         <div class="skill-box">Python</div>
         <div class="skill-box">GoLang</div>
-        <div class="skill-box">PySpark</div>
-        <div class="skill-box">TensorFlow & Keras</div>
-        <div class="skill-box">Transformers / LLMs</div>
+        <div class="skill-box">TensorFlow</div>
+        <div class="skill-box">Transformers</div>
+        <div class="skill-box">LLMs</div>
         <div class="skill-box">NLP</div>
+        <div class="skill-box">PySpark</div>
         <div class="skill-box">Docker</div>
         <div class="skill-box">Kubernetes</div>
         <div class="skill-box">Airflow</div>
-        <div class="skill-box">AWS (Glue, Lambda, S3, EventBridge)</div>
+        <div class="skill-box">AWS Glue</div>
+        <div class="skill-box">Lambda</div>
+        <div class="skill-box">S3</div>
         <div class="skill-box">GraphQL</div>
         <div class="skill-box">gRPC</div>
-        <div class="skill-box">PostgreSQL / MySQL</div>
-        <div class="skill-box">CI/CD – GitHub, GitLab, Bitbucket</div>
+        <div class="skill-box">PostgreSQL</div>
+        <div class="skill-box">CI/CD</div>
+
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section>
     <h2>Featured Projects</h2>
 
-    <div class="project">
+    <div class="card">
         <h3>LLM-Powered Sales Intelligence Engine</h3>
-        <p>
-            Designed a system that transforms emails, calls, and meetings into vector embeddings stored in PostgreSQL. 
-            Built LLM-based contextual grounding, humanized response generation, and actionable sales intelligence.
-        </p>
-        <strong>Tech:</strong> Python, Transformers, Embeddings, PostgreSQL, LLM Ops
+        Built embeddings-based intelligence system for emails, calls, and meetings using transformers, 
+        PostgreSQL, and LLM grounding to deliver human-like contextual insights.
     </div>
 
-    <div class="project">
+    <div class="card">
         <h3>Knowledge Graph Migration & Transformer Optimization</h3>
-        <p>
-            Migrated a massive knowledge graph from Yext to AWS (S3, Lambda, PostgreSQL). 
-            Optimized transformer models to improve natural language understanding and latency.
-        </p>
-        <strong>Tech:</strong> AWS, Transformers, Python
+        Migrated Yext knowledge graph to AWS (S3, Lambda, PostgreSQL) and optimized transformers 
+        for speed, accuracy, and response naturality.
     </div>
 
-    <div class="project">
+    <div class="card">
         <h3>Microsoft Copilot + CRM Integration</h3>
-        <p>
-            Integrated Copilot for Sales with enterprise CRM systems using structured metadata, SEO-aligned schemas, 
-            and plugin-based insights across Teams, Outlook, and Copilot.
-        </p>
-        <strong>Tech:</strong> MS Copilot, GraphQL, CRM APIs
+        Integrated Copilot for Sales with enterprise CRM using structured metadata, schemas, and 
+        plugin-based delivery across Outlook, Teams, and Copilot.
     </div>
 
-    <div class="project">
-        <h3>ServiceNow Ticket ML Automation</h3>
-        <p>
-            Built ML models to cluster and tag ITSM tickets, automating ticket classification and analysis. 
-            Integrated the system using Docker, Kubernetes, and CI/CD pipelines.
-        </p>
-        <strong>Tech:</strong> Python, NLP, Kubernetes, Docker
+    <div class="card">
+        <h3>ServiceNow Ticket Intelligence Automation</h3>
+        Developed clustering, tagging, and automation models for ITSM tickets using NLP and 
+        deployed via Kubernetes, Docker, and CI/CD.
     </div>
 
-    <div class="project">
-        <h3>ETL Pipeline: S3 → Glue → MySQL</h3>
-        <p>
-            Built financial ETL pipelines using PySpark and AWS Glue, including schema mapping, 
-            configuration handling, and automated Glue Jobs for large-scale ingestion.
-        </p>
-        <strong>Tech:</strong> AWS Glue, PySpark, MySQL
+    <div class="card">
+        <h3>ETL Pipeline (S3 → Glue → MySQL)</h3>
+        Designed large-scale ingestion pipelines using PySpark, AWS Glue, schema mapping, and 
+        automated job execution for financial ETL workflows.
     </div>
+
+    <div class="card">
+    <h3>Machine Learning – Data Quality Enhancement (Amazon Go)</h3>
+    <p>
+        Improved the quality and reliability of data pipelines by applying machine learning techniques 
+        for anomaly detection and data validation. Analyzed and resolved low-confidence queries to refine 
+        datasets and support the continuous testing of live data streams generated from Amazon Go stores 
+        across the globe.
+    </p>
+    </div>
+
 
 </section>
 
+<!-- CONTACT -->
 <section>
     <h2>Contact</h2>
-    <p class="contact">
+    <div class="card contact">
         📧 Email: <a href="mailto:nvp.1394@gmail.com">nvp.1394@gmail.com</a><br>
         📞 Phone: +91-7842109988<br>
         🔗 LinkedIn: <a href="https://www.linkedin.com/in/vinay-prasad-b56694297/" target="_blank">View Profile</a><br>
-        📍 Location: Hyderabad, India
-        💼 Current CTC: 43 Lakhs Per Annum(Approx 48000 USD Per Annum) 
-    </p>
+        📍 Location: Hyderabad, India<br>
+        💼 Current CTC: 43 LPA INR (48K USD Per Annum)
+    </div>
 </section>
 
 <footer>
-    © 2025 Vinay Prasad Nainar • Portfolio
+    © 2025 • Vinay Prasad Nainar • Futuristic AI Portfolio
 </footer>
 
 </body>
