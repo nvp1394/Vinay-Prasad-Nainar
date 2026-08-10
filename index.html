@@ -3,217 +3,464 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vinay Prasad Nainar – ML & MLOps Engineer</title>
+<title>Vinay Prasad Nainar — Senior AI/ML Engineer</title>
+<meta name="description" content="Vinay Prasad Nainar — Senior AI/ML Engineer specializing in Generative AI, LLMOps, RAG, MLOps, and production AI systems on AWS." />
 
 <style>
+    :root {
+        --ink: #14181f;
+        --ink-soft: #3d4550;
+        --muted: #6b7480;
+        --line: #e4e7ec;
+        --line-soft: #eef0f3;
+        --accent: #1f4b8e;
+        --accent-soft: #e8eef7;
+        --bg: #ffffff;
+        --page: #f6f7f9;
+        --max: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
         margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: linear-gradient(135deg, #0b0f1a, #1b2640, #2a0f45);
-        color: #e6e6e6;
+        background: var(--page);
+        color: var(--ink);
+        font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15.5px;
         line-height: 1.6;
-        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
     }
 
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 80px 20px;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(40, 20, 80, 0.3));
-    }
-
-    .profile-pic {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 4px solid #7f5bff;
-        box-shadow: 0px 0px 25px rgba(140, 82, 255, 0.7);
-        object-fit: cover;
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-        font-weight: bold;
-        background: linear-gradient(90deg, #a074ff, #6bd5ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 10px 0;
-    }
-
-    .hero p {
-        font-size: 18px;
-        opacity: 0.9;
-    }
-
-    /* Section Containers */
-    section {
-        max-width: 1000px;
+    .sheet {
+        max-width: var(--max);
         margin: 40px auto;
-        padding: 20px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(20, 24, 31, 0.06), 0 12px 40px rgba(20, 24, 31, 0.05);
+        padding: 56px 64px;
     }
 
-    h2 {
-        font-size: 26px;
-        border-left: 6px solid #a074ff;
-        padding-left: 12px;
-        margin-bottom: 20px;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Header ---------- */
+    header {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        padding-bottom: 26px;
+        border-bottom: 2px solid var(--ink);
     }
 
-    /* Glassmorphism Card */
-    .card {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 20px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    .avatar {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        flex-shrink: 0;
     }
 
-    /* Skills Grid */
-    .skills-grid {
+    .identity { flex: 1; min-width: 0; }
+
+    .identity h1 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+    }
+
+    .identity .role {
+        margin: 4px 0 12px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        font-size: 13.5px;
+        color: var(--ink-soft);
+    }
+
+    .contact span, .contact a { white-space: nowrap; }
+    .contact .sep { color: var(--line); }
+
+    /* ---------- Sections ---------- */
+    section { padding-top: 30px; }
+
+    .section-title {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin: 0 0 16px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .summary {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 15px;
+    }
+
+    /* ---------- Skills ---------- */
+    .skills { display: grid; gap: 9px; }
+
+    .skill-row {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 12px;
+        grid-template-columns: 172px 1fr;
+        gap: 16px;
+        align-items: baseline;
     }
 
-    .skill-box {
-        background: rgba(255, 255, 255, 0.12);
-        padding: 12px;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: bold;
+    .skill-row .label {
+        font-weight: 600;
+        color: var(--ink);
         font-size: 14px;
-        color: #d8d8d8;
-        border: 1px solid rgba(255,255,255,0.15);
     }
 
-    /* Contact */
-    .contact a {
-        color: #86c7ff;
-        font-weight: bold;
-        text-decoration: none;
+    .skill-row .value { color: var(--ink-soft); font-size: 14.5px; }
+
+    /* ---------- Experience ---------- */
+    .job { padding-bottom: 22px; }
+    .job:last-child { padding-bottom: 0; }
+
+    .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        flex-wrap: wrap;
     }
 
-    /* Footer */
+    .job-title { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0; }
+
+    .job-company { font-size: 14.5px; color: var(--accent); font-weight: 600; }
+
+    .job-meta {
+        text-align: right;
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+    }
+
+    .job-meta .dates { font-weight: 600; color: var(--ink-soft); display: block; }
+
+    ul.bullets {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+    }
+
+    ul.bullets li { margin-bottom: 6px; padding-left: 3px; }
+    ul.bullets li:last-child { margin-bottom: 0; }
+    ul.bullets strong { color: var(--ink); font-weight: 600; }
+
+    .job-divider { border: 0; border-top: 1px solid var(--line-soft); margin: 22px 0 0; }
+
+    /* ---------- Projects ---------- */
+    .project { padding-bottom: 16px; }
+    .project:last-child { padding-bottom: 0; }
+
+    .project h3 {
+        margin: 0 0 4px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+    }
+
+    .project h3 .tech { font-weight: 500; color: var(--muted); font-size: 13.5px; }
+    .project p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
+
+    /* ---------- Education / Certs ---------- */
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .edu-item { margin-bottom: 12px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item .deg { font-weight: 600; color: var(--ink); font-size: 14.5px; }
+    .edu-item .meta { color: var(--muted); font-size: 13px; }
+
+    ul.plain { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 14.5px; }
+    ul.plain li { margin-bottom: 6px; }
+
     footer {
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
         text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        background: rgba(0,0,0,0.2);
-        color: #aaa;
+        font-size: 12.5px;
+        color: var(--muted);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 720px) {
+        .sheet { margin: 0; border-radius: 0; padding: 32px 22px; border-left: 0; border-right: 0; }
+        header { flex-direction: column; text-align: center; gap: 16px; }
+        .contact { justify-content: center; }
+        .skill-row { grid-template-columns: 1fr; gap: 2px; }
+        .job-head { flex-direction: column; }
+        .job-meta { text-align: left; }
+        .two-col { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    @media print {
+        body { background: #fff; font-size: 11pt; }
+        .sheet { margin: 0; border: 0; box-shadow: none; max-width: 100%; padding: 0; }
+        a { color: var(--ink); }
+        section { padding-top: 18px; }
     }
 </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<div class="hero">
-    <img src="Vinay-ProfilePic.jpg" alt="Vinay Prasad Nainar" class="profile-pic">
+<main class="sheet">
 
-    <h1>Vinay Prasad Nainar</h1>
-    <p>Senior Machine Learning & MLOps Engineer • LLMs • Generative AI • NLP • Cloud</p>
-</div>
+    <!-- HEADER -->
+    <header>
+        <img src="Vinay-ProfilePic.jpg" alt="Vinay Prasad Nainar" class="avatar" />
+        <div class="identity">
+            <h1>Vinay Prasad Nainar</h1>
+            <div class="role">Senior AI/ML Engineer</div>
+            <div class="contact">
+                <span>Hyderabad, India</span>
+                <span class="sep">|</span>
+                <a href="tel:+917842109988">+91 78421 09988</a>
+                <span class="sep">|</span>
+                <a href="mailto:nvp.1394@gmail.com">nvp.1394@gmail.com</a>
+                <span class="sep">|</span>
+                <a href="https://www.linkedin.com/in/vinay-prasad-b56694297/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </header>
 
-<!-- ABOUT -->
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-    I am a Senior Machine Learning Engineer with <strong>9 years 3 months of total experience</strong>, including 
-    <strong>8+ years in ML/MLOps</strong> and <strong>3+ years specializing in LLMs, NLP, and Generative AI</strong>. 
-    I design enterprise-ready AI systems, build scalable ML pipelines, and integrate cloud-native 
-    architectures that transform unstructured data into actionable intelligence.
-    </div>
-</section>
+    <!-- SUMMARY -->
+    <section>
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Senior AI/ML Engineer with ~10 years of IT experience, including 7.5 years in MLOps and
+            3+ years delivering production-grade Generative AI and LLM solutions. Specialized in
+            LLMOps, RAG systems, prompt engineering, and scalable ML pipelines across AWS and
+            Databricks. Proven ownership of AI systems end to end — from data engineering and model
+            integration to deployment, orchestration, and real-time inference.
+        </p>
+    </section>
 
-<!-- SKILLS -->
-<section>
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
+    <!-- SKILLS -->
+    <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills">
+            <div class="skill-row">
+                <div class="label">AI &amp; Machine Learning</div>
+                <div class="value">Generative AI, LLMs, LLMOps, RAG, Prompt Engineering, NLP, Machine Learning, TensorFlow, PyTorch, scikit-learn, Rasa</div>
+            </div>
+            <div class="skill-row">
+                <div class="label">Languages</div>
+                <div class="value">Python, Golang, SQL, PySpark</div>
+            </div>
+            <div class="skill-row">
+                <div class="label">Data Engineering</div>
+                <div class="value">Apache Spark, Databricks, Apache Airflow, ETL Pipelines, Kafka, RabbitMQ, Terraform</div>
+            </div>
+            <div class="skill-row">
+                <div class="label">Cloud &amp; DevOps</div>
+                <div class="value">AWS (S3, Glue, Lambda, EC2, ECR, SNS, EventBridge, CloudWatch, CloudFormation), Docker, Kubernetes, CI/CD, DataDog</div>
+            </div>
+            <div class="skill-row">
+                <div class="label">Databases &amp; APIs</div>
+                <div class="value">PostgreSQL, Elasticsearch, GraphQL, gRPC, REST APIs, Microservices, Pandas, NumPy</div>
+            </div>
+            <div class="skill-row">
+                <div class="label">Enterprise AI</div>
+                <div class="value">Microsoft Copilot for Sales, Copilot Studio, Salesforce, Outlook &amp; Teams Integrations, Knowledge Graphs</div>
+            </div>
+        </div>
+    </section>
 
-        <div class="skill-box">Python</div>
-        <div class="skill-box">GoLang</div>
-        <div class="skill-box">TensorFlow</div>
-        <div class="skill-box">Transformers</div>
-        <div class="skill-box">LLMs</div>
-        <div class="skill-box">NLP</div>
-        <div class="skill-box">PySpark</div>
-        <div class="skill-box">Docker</div>
-        <div class="skill-box">Kubernetes</div>
-        <div class="skill-box">Airflow</div>
-        <div class="skill-box">AWS Glue</div>
-        <div class="skill-box">Lambda</div>
-        <div class="skill-box">S3</div>
-        <div class="skill-box">GraphQL</div>
-        <div class="skill-box">gRPC</div>
-        <div class="skill-box">PostgreSQL</div>
-        <div class="skill-box">CI/CD</div>
+    <!-- EXPERIENCE -->
+    <section>
+        <h2 class="section-title">Professional Experience</h2>
 
-    </div>
-</section>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">Senior AI/ML Engineer</p>
+                    <span class="job-company">ValueLabs LLP</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">Jan 2024 – Present</span>
+                    Hyderabad, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Architected an LLM-driven sales intelligence engine</strong> that converts emails, calls, and meetings into vector embeddings in PostgreSQL, applying contextual grounding and humanized response generation to lift sales engagement.</li>
+                <li><strong>Implemented production RAG systems</strong> combining vector databases with LLMs to deliver context-aware responses for knowledge-intensive applications.</li>
+                <li><strong>Engineered advanced prompt templates and optimization strategies</strong> for GPT-3.5 and GPT-4, improving response accuracy and reducing hallucinations in live LLM applications.</li>
+                <li><strong>Integrated Microsoft Copilot for Sales</strong> with internal CRM and Salesforce via custom connectors and structured data mapping, delivering context-rich insights across Outlook, Teams, and Copilot.</li>
+                <li><strong>Developed high-performance Go microservices</strong> using gRPC and GraphQL, building secure, scalable pathways for LLM access to enterprise data.</li>
+            </ul>
+        </div>
+        <hr class="job-divider" />
 
-<!-- PROJECTS -->
-<section>
-    <h2>Featured Projects</h2>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">Technical Lead</p>
+                    <span class="job-company">Encora Innovation Labs</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">Jun 2023 – Jan 2024</span>
+                    Bengaluru, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Led the architecture of scalable financial data pipelines</strong>, owning ingestion, transformation, and loading of customer data from Amazon S3 and Salesforce into MySQL with high reliability and performance.</li>
+                <li><strong>Orchestrated end-to-end ETL workflows using AWS Glue</strong>, owning job design, configuration, and monitoring, with schema versioning and governance via Liquibase.</li>
+                <li><strong>Enhanced ETL pipelines with ML-driven capabilities</strong> and dynamic field mapping to support evolving business needs and reduce manual intervention.</li>
+            </ul>
+        </div>
+        <hr class="job-divider" />
 
-    <div class="card">
-        <h3>LLM-Powered Sales Intelligence Engine</h3>
-        Built embeddings-based intelligence system for emails, calls, and meetings using transformers, 
-        PostgreSQL, and LLM grounding to deliver human-like contextual insights.
-    </div>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">Senior ML Engineer</p>
+                    <span class="job-company">EY</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">Jun 2022 – Jun 2023</span>
+                    Hyderabad, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Built an end-to-end ETL and analytics solution</strong> using Python and PySpark for text extraction, transformation, and clustering aligned to client configuration.</li>
+                <li><strong>Deployed pipelines through Docker and Kubernetes CI/CD</strong>, delivering processed data into Power BI for sales-performance analysis of client wellbores.</li>
+            </ul>
+        </div>
+        <hr class="job-divider" />
 
-    <div class="card">
-        <h3>Knowledge Graph Migration & Transformer Optimization</h3>
-        Migrated Yext knowledge graph to AWS (S3, Lambda, PostgreSQL) and optimized transformers 
-        for speed, accuracy, and response naturality.
-    </div>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">ML Engineer</p>
+                    <span class="job-company">Sentini Geo Solutions</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">May 2020 – Jun 2022</span>
+                    Hyderabad, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Owned and productionized clustering and automated tagging models</strong> for ServiceNow ticket data, improving triaging efficiency and accelerating release cycles by ~40–50% via Docker, Kubernetes, and Bitbucket CI/CD.</li>
+                <li><strong>Designed and deployed an enterprise chatbot</strong> on the Konverso platform for HR self-service with role-based access, reducing HR support queries by ~30–40%.</li>
+                <li><strong>Implemented time-series anomaly detection</strong> on server metrics (CPU, memory, swap) using Facebook Prophet, enabling proactive monitoring and early fault detection.</li>
+            </ul>
+        </div>
+        <hr class="job-divider" />
 
-    <div class="card">
-        <h3>Microsoft Copilot + CRM Integration</h3>
-        Integrated Copilot for Sales with enterprise CRM using structured metadata, schemas, and 
-        plugin-based delivery across Outlook, Teams, and Copilot.
-    </div>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">Data Analyst</p>
+                    <span class="job-company">Amazon</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">Nov 2017 – Nov 2019</span>
+                    Hyderabad, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Improved data quality and reliability</strong> using ML techniques to resolve low-confidence predictions from Amazon Go real-time data streams across global stores.</li>
+                <li><strong>Detected anomalous transaction patterns</strong> and flagged high-risk accounts, enriching linked-account insights for the TRMS investigations team.</li>
+            </ul>
+        </div>
+        <hr class="job-divider" />
 
-    <div class="card">
-        <h3>ServiceNow Ticket Intelligence Automation</h3>
-        Developed clustering, tagging, and automation models for ITSM tickets using NLP and 
-        deployed via Kubernetes, Docker, and CI/CD.
-    </div>
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">Senior Associate</p>
+                    <span class="job-company">Wipro</span>
+                </div>
+                <div class="job-meta">
+                    <span class="dates">Feb 2016 – Sep 2017</span>
+                    Hyderabad, India
+                </div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Analyzed copyright and ownership conflicts</strong> across publisher rights data, computing distribution shares to enable accurate royalty allocation.</li>
+                <li><strong>Developed data-driven retail analytics</strong> for assortment planning and demand forecasting to optimize product mix and prediction accuracy.</li>
+            </ul>
+        </div>
+    </section>
 
-    <div class="card">
-        <h3>ETL Pipeline (S3 → Glue → MySQL)</h3>
-        Designed large-scale ingestion pipelines using PySpark, AWS Glue, schema mapping, and 
-        automated job execution for financial ETL workflows.
-    </div>
+    <!-- PROJECTS -->
+    <section>
+        <h2 class="section-title">Key Projects</h2>
 
-    <div class="card">
-    <h3>Machine Learning – Data Quality Enhancement (Amazon Go)</h3>
-    <p>
-        Improved the quality and reliability of data pipelines by applying machine learning techniques 
-        for anomaly detection and data validation. Analyzed and resolved low-confidence queries to refine 
-        datasets and support the continuous testing of live data streams generated from Amazon Go stores 
-        across the globe.
-    </p>
-    </div>
+        <div class="project">
+            <h3>Smart Email Assistant — Conversational AI <span class="tech">· GPT-4, Prompt Engineering, NLP</span></h3>
+            <p>Designed conversational prompts for AI-powered customer service, reducing response time by 70% and achieving 85% customer satisfaction through iterative optimization.</p>
+        </div>
 
+        <div class="project">
+            <h3>LLM Sales Intelligence Engine <span class="tech">· Transformers, PostgreSQL, RAG, Vector Embeddings</span></h3>
+            <p>Built an embeddings-based intelligence system over emails, calls, and meetings with LLM grounding to deliver human-like, context-rich sales insights.</p>
+        </div>
 
-</section>
+        <div class="project">
+            <h3>Stock Price Prediction <span class="tech">· Random Forest, Gradient Boosting, SEC 10-K</span></h3>
+            <p>Developed predictive models forecasting long-term company growth from SEC 10-K filings, achieving macro F1-scores of 0.72–0.73.</p>
+        </div>
+    </section>
 
-<!-- CONTACT -->
-<section>
-    <h2>Contact</h2>
-    <div class="card contact">
-        📧 Email: <a href="mailto:nvp.1394@gmail.com">nvp.1394@gmail.com</a><br>
-        📞 Phone: +91-7842109988<br>
-        🔗 LinkedIn: <a href="https://www.linkedin.com/in/vinay-prasad-b56694297/" target="_blank">View Profile</a><br>
-        📍 Location: Hyderabad, India<br>
-    </div>
-</section>
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section>
+        <div class="two-col">
+            <div>
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <div class="deg">B.Tech, Electronics &amp; Communication Engineering</div>
+                    <div class="meta">RGUKT-Basar · 2009–2015</div>
+                </div>
+                <div class="edu-item">
+                    <div class="deg">Executive Program in Algorithmic Trading</div>
+                    <div class="meta">QuantInsti · 2021</div>
+                </div>
+                <div class="edu-item">
+                    <div class="deg">Diploma in Data Science</div>
+                    <div class="meta">INSOFE · 2019</div>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Certifications</h2>
+                <ul class="plain">
+                    <li>AWS Certified Cloud Practitioner</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    © 2025 • Vinay Prasad Nainar • Futuristic AI Portfolio
-</footer>
+    <footer>
+        Vinay Prasad Nainar · Senior AI/ML Engineer · Hyderabad, India
+    </footer>
+
+</main>
 
 </body>
 </html>
